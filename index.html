@@ -58,6 +58,16 @@
   .contact a:hover { text-decoration: underline; }
   .contact .muted { color: var(--muted); }
   .contact .full { grid-column: 1 / -1; }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: 12px; flex-shrink: 0; }
+  .photo {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 170px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
 
   section { margin-bottom: 36px; }
   h2 {
@@ -99,6 +109,8 @@
     header { flex-direction: column; }
     h1 { font-size: 1.6rem; }
     .contact { grid-template-columns: 1fr; }
+    .header-right { flex-direction: row; align-items: center; justify-content: center; width: 100%; gap: 12px; }
+    .photo { width: 110px; max-width: 40%; max-height: none; }
   }
 
   @media print {
@@ -116,9 +128,12 @@
       <div class="role" id="role"></div>
       <div class="contact" id="contact"></div>
     </div>
-    <div class="lang-toggle">
-      <button id="btn-zh" type="button">中文</button>
-      <button id="btn-en" type="button">EN</button>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <button id="btn-zh" type="button">中文</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+      <img class="photo" src="assests/00.jpg" alt="Dai Tianshi">
     </div>
   </header>
   <main id="main"></main>
