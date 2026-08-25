@@ -1,522 +1,769 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>戴天石 · 学术简历 / Academic CV</title>
-<style>
-  :root {
-    --text: #1a1a1a;
-    --muted: #666;
-    --line: #ddd;
-    --accent: #1a4d8f;
-    --bg: #ffffff;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", -apple-system, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.7;
-    padding: 48px 20px;
-  }
-  .page {
-    max-width: 840px;
-    margin: 0 auto;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>戴天石 · 学术简历 / Academic CV</title>
+    <style>
+      :root {
+        --text: #1a1a1a;
+        --muted: #666;
+        --line: #ddd;
+        --accent: #1a4d8f;
+        --bg: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          "Segoe UI",
+          "Noto Sans SC",
+          "Microsoft YaHei",
+          -apple-system,
+          sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.7;
+        padding: 48px 20px;
+      }
+      .page {
+        max-width: 840px;
+        margin: 0 auto;
+      }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    border-bottom: 2px solid var(--text);
-    padding-bottom: 24px;
-    margin-bottom: 32px;
-  }
-  h1 { font-size: 2.1rem; letter-spacing: 0.02em; }
-  .role { color: var(--muted); margin-top: 6px; font-size: 1rem; }
-  .lang-toggle { display: flex; gap: 8px; flex-shrink: 0; }
-  .lang-toggle button {
-    border: 1px solid var(--line);
-    background: #fff;
-    color: var(--muted);
-    padding: 6px 14px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: all .2s;
-  }
-  .lang-toggle button.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-  }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        border-bottom: 2px solid var(--text);
+        padding-bottom: 24px;
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 2.1rem;
+        letter-spacing: 0.02em;
+      }
+      .role {
+        color: var(--muted);
+        margin-top: 6px;
+        font-size: 1rem;
+      }
+      .lang-toggle {
+        display: flex;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .lang-toggle button {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--muted);
+        padding: 6px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.2s;
+      }
+      .lang-toggle button.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
 
-  .contact { margin-top: 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; font-size: 0.9rem; }
-  .contact a { color: var(--accent); text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
-  .contact .muted { color: var(--muted); }
-  .contact .full { grid-column: 1 / -1; }
-  .header-right { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: 12px; flex-shrink: 0; }
-  .photo {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 170px;
-    border-radius: 6px;
-    border: 1px solid var(--line);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  }
+      .contact {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 24px;
+        font-size: 0.9rem;
+      }
+      .contact a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .contact a:hover {
+        text-decoration: underline;
+      }
+      .contact .muted {
+        color: var(--muted);
+      }
+      .contact .full {
+        grid-column: 1 / -1;
+      }
+      .header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .photo {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 170px;
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      }
 
-  section { margin-bottom: 36px; }
-  h2 {
-    font-size: 1.15rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 8px;
-    margin-bottom: 16px;
-    color: var(--text);
-  }
-  h2 .bar {
-    display: inline-block;
-    width: 4px;
-    height: 1.05em;
-    background: var(--accent);
-    margin-right: 10px;
-    vertical-align: -0.1em;
-  }
+      section {
+        margin-bottom: 36px;
+      }
+      h2 {
+        font-size: 1.15rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+        color: var(--text);
+      }
+      h2 .bar {
+        display: inline-block;
+        width: 4px;
+        height: 1.05em;
+        background: var(--accent);
+        margin-right: 10px;
+        vertical-align: -0.1em;
+      }
 
-  .entry { margin-bottom: 16px; }
-  .entry:last-child { margin-bottom: 0; }
-  .entry-title { font-weight: 600; }
-  ul { margin: 6px 0 0 20px; }
-  li { margin-bottom: 4px; }
-  li:last-child { margin-bottom: 0; }
-  p { margin-bottom: 10px; }
-  p:last-child { margin-bottom: 0; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+      .entry {
+        margin-bottom: 16px;
+      }
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+      .entry-title {
+        font-weight: 600;
+      }
+      ul {
+        margin: 6px 0 0 20px;
+      }
+      li {
+        margin-bottom: 4px;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-  .skills-group { margin-bottom: 12px; }
-  .skills-group-title { font-weight: 600; margin-bottom: 4px; }
+      .skills-group {
+        margin-bottom: 12px;
+      }
+      .skills-group-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
 
-  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 0.8rem; }
+      footer {
+        margin-top: 40px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
 
-  @media (max-width: 560px) {
-    body { padding: 24px 16px; }
-    header { flex-direction: column; }
-    h1 { font-size: 1.6rem; }
-    .contact { grid-template-columns: 1fr; }
-    .header-right { flex-direction: row; align-items: center; justify-content: center; width: 100%; gap: 12px; }
-    .photo { width: 110px; max-width: 40%; max-height: none; }
-  }
+      @media (max-width: 560px) {
+        body {
+          padding: 24px 16px;
+        }
+        header {
+          flex-direction: column;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .header-right {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          gap: 12px;
+        }
+        .photo {
+          width: 110px;
+          max-width: 40%;
+          max-height: none;
+        }
+      }
 
-  @media print {
-    body { padding: 0; }
-    .lang-toggle { display: none; }
-    section { break-inside: avoid; }
-  }
-</style>
-</head>
-<body>
-<div class="page">
-  <header>
-    <div>
-      <h1 id="name"></h1>
-      <div class="role" id="role"></div>
-      <div class="contact" id="contact"></div>
+      @media print {
+        body {
+          padding: 0;
+        }
+        .lang-toggle {
+          display: none;
+        }
+        section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div>
+          <h1 id="name"></h1>
+          <div class="role" id="role"></div>
+          <div class="contact" id="contact"></div>
+        </div>
+        <div class="header-right">
+          <div class="lang-toggle">
+            <button id="btn-zh" type="button">中文</button>
+            <button id="btn-en" type="button">EN</button>
+          </div>
+          <img class="photo" src="assests/00.jpg" alt="Dai Tianshi" />
+        </div>
+      </header>
+      <main id="main"></main>
+      <footer id="footer"></footer>
     </div>
-    <div class="header-right">
-      <div class="lang-toggle">
-        <button id="btn-zh" type="button">中文</button>
-        <button id="btn-en" type="button">EN</button>
-      </div>
-      <img class="photo" src="assests/00.jpg" alt="Dai Tianshi">
-    </div>
-  </header>
-  <main id="main"></main>
-  <footer id="footer"></footer>
-</div>
 
-<script>
-const I18N = {
-  zh: {
-    htmlLang: "zh-CN",
-    docTitle: "戴天石 · 学术简历",
-    name: "戴天石",
-    role: "工学硕士 · 电子与信息工程",
-    contacts: [
-      { text: "中国·南京", mute: true },
-      { text: "邮箱：tianshi.dai@qq.com", href: "mailto:tianshi.dai@qq.com" },
-      { text: "ORCID", href: "https://orcid.org/0009-0002-2830-7963" },
-      { text: "Google Scholar", href: "https://scholar.google.com/citations?user=rYdUI6QAAAAJ" },
-      { text: "GitHub: ", links: [
-        { text: "Tianshi-Dai", href: "https://github.com/Tianshi-Dai" },
-        { text: "theLittleStone", href: "https://github.com/theLittleStone" }
-      ] },
-      { text: "ResearchGate", href: "https://www.researchgate.net/profile/Tianshi-Dai-2" }
-    ],
-    sections: [
-      {
-        id: "education", title: "教育背景",
-        type: "entries",
-        items: [
-          {
-            title: "硕士：2023.9 - 2026.6 河海大学 ｜ 电子与信息工程 ｜ 学位课均分：83.14 / 100",
-            bullets: [
-              "指导教师：胡居荣 教授",
-              "研究领域：信号处理、机器学习、毫米波雷达",
-              "核心理论课程：矩阵论 90 / 100、数值分析 93 / 100、概率论（自学）、信息论（自学）"
-            ]
-          },
-          {
-            title: "本科：2019.9 - 2023.6 南京理工大学紫金学院 ｜ 物联网工程 ｜ 学分绩点：3.63 / 4.0",
-            bullets: []
-          },
-          {
-            title: "联培经历：2024.7 - 2025.8 中国科学院苏州生物医学工程技术研究所 ｜ 联合培养研究生（全职驻所科研）",
-            bullets: []
-          },
-          {
-            title: "海外交流：2026 春 新加坡国立大学（NUS）｜ 短期交流课程",
-            bullets: [
-              "修读课程：《人工智能与机器学习（机器学习应用）》（Artificial Intelligence and Machine Learning (Machine Learning Applications)）"
-            ]
-          }
-        ]
-      },
-      {
-        id: "interests", title: "研究兴趣",
-        type: "paragraphs",
-        paragraphs: [
-          "目前我的主要研究兴趣在于从理论角度深入理解神经网络的内部机制，尤其关注可解释机器学习、深度模型的信息理论分析以及神经网络中的因果推理。",
-          "此前我的研究涉及基于信号处理和深度学习的毫米波雷达人体活动识别，我设计了基于点云数据表示学习的神经架构。通过研究不同的输入模态和网络结构如何影响表示学习和泛化能力，我开始对神经网络提取的信息、这些信息的编码方式以及为何某些表示能带来更好的泛化能力产生兴趣。"
-        ],
-        bullets: [
-          "<strong>目前想从事的方向</strong>：可解释机器学习、神经网络的因果推理，以及信息论同机器学习、特别是神经网络的交叉领域，例如信息瓶颈理论（Information Bottleneck Theory，IB）。",
-          "<strong>此前的研究方向</strong>：信号处理、机器学习、图神经网络"
-        ]
-      },
-      {
-        id: "experience", title: "科研经历",
-        type: "entries",
-        items: [
-          {
-            title: "2024 - 2026：开发了 DGRNET，一种用于基于毫米波雷达点云的人体活动分类的神经网络。",
-            bullets: [
-              "基于 DGCNN 改良了一种基于图神经网络的 backbone，以探究额外的信号模态如何影响点云表示学习和分类性能。",
-              "在 DGRNET 中整合了时间建模模块，以研究序列信息聚合对分类效果的影响。",
-              "同步研究了更多信息输入（雷达强度）对神经网络模型识别效果的影响，以及不同神经网络结构对信息提取能力的区别，并进一步使我的研究兴趣转向神经网络本身。"
-            ]
-          },
-          {
-            title: "2024 - 2026：与 DGRNET 配套，录制了用于人体活动识别的毫米波雷达数据。",
-            bullets: [
-              "使用 TI IWR6843AOP 雷达采集，数据集带有原生的强度信息维度。",
-              "涵盖多个人类受试者、动作类别和观察方向，对神经网络的识别能力提出了更高的要求。"
-            ]
-          },
-          {
-            title: "2023：毕业设计：基于 ROS 系统的送药小车。",
-            bullets: [
-              "主要涉及 ROS 系统、图像和激光雷达识别、A* 等寻路算法以及 DWA 等局部路径规划算法。"
-            ]
-          },
-          {
-            title: "2021 - 2022：大学生创新创业项目：基于大数据分析的智慧水利平台系统设计。",
-            bullets: [
-              "本人主要负责基于 Java 自带库以及 MySQL 数据库，将各传感器节点发送的数据进行整合并进行统计。"
-            ]
-          }
-        ]
-      },
-      {
-        id: "publications", title: "发表论文",
-        type: "bullets",
-        bullets: [
-          '<strong>【已发表】</strong> Tianshi Dai, et al. "DGRNET: A Spatiotemporal Attention Neural Network for Millimeter-Wave Radar HAR With Integrated Intensity Information." <em>IEEE Sensors Journal</em>, 2026.'
-        ]
-      },
-      {
-        id: "skills", title: "专业技能",
-        type: "groups",
-        groups: [
-          {
-            title: "数学与理论基础",
-            bullets: ["矩阵论、概率论、数值分析、离散数学、工程复变、函数信息论"]
-          },
-          {
-            title: "编程与工程开发",
-            bullets: ["主力语言：Python、Java、C、Rust", "深度学习框架：PyTorch、NumPy、Llama.cpp"]
-          },
-          {
-            title: "其他专业基础知识",
-            bullets: ["信号与系统、数字信号处理、通信原理、计算机组成原理、数/模电"]
-          },
-          {
-            title: "语言能力",
-            bullets: ["大学英语四级（CET-4）：515", "大学英语六级（CET-6）：466", "考研初试英语：70"]
-          }
-        ]
-      },
-      {
-        id: "projects", title: "独立项目",
-        type: "paragraphs",
-        paragraphs: [
-          '使用基于 Llama.cpp 的 LLM 相关工具，以及特定的量化数据集 imatrix-calibration，构建了基于 Qwen3.6 27B 改版本地开源模型的权重矩阵 iMatrix，以及对应的量化版本。目前模型发布于 HuggingFace 社区（<a href="https://huggingface.co/theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF">theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF</a>），并获得了合计超过两万五千的下载量。',
-          '构建了一套以文档驱动（Document-Driven）与测试驱动开发（TDD）严格约束的 Agent 辅助编程流程，旨在通过明确的用户主导和流程限定，提升 AI 生成代码的稳定性与可维护性。仓库地址：<a href="https://github.com/theLittleStone/SpecForge">github.com/theLittleStone/SpecForge</a>',
-          '此外，曾参与 Opencode、Darktable 等知名开源项目的社区贡献（代码审查与功能补丁）。'
-        ]
-      },
-      {
-        id: "awards", title: "获奖与荣誉",
-        type: "bullets",
-        bullets: [
-          "研究生阶段获第一、第三学年校奖学金",
-          "本科期间共获得校一等奖学金四次、校二等奖学金两次、校三等奖学金一次；2020 年获得校三好学生称号",
-          "2021 年：全国大学生电子设计竞赛 江苏省二等奖",
-          "2020 年：第十二届全国大学生数学竞赛（非数学类）二等奖",
-          "2021 - 2022 年：参加江苏省大学生创新创业训练计划项目并顺利结项",
-          "2021 年：校电子设计大赛二等奖；校级数学建模竞赛一等奖",
-          "2021 年：江苏省第十二届大学生知识竞赛（理工科组）三等奖",
-          "2020 年秋季：江苏省高等学校计算机二级（C 语言）优秀"
-        ]
+    <script>
+      const I18N = {
+        zh: {
+          htmlLang: "zh-CN",
+          docTitle: "戴天石 · 学术简历",
+          name: "戴天石",
+          role: "工学硕士 · 电子与信息工程",
+          contacts: [
+            { text: "中国·南京", mute: true },
+            {
+              text: "邮箱：tianshi.dai@qq.com",
+              href: "mailto:tianshi.dai@qq.com",
+            },
+            { text: "ORCID", href: "https://orcid.org/0009-0002-2830-7963" },
+            {
+              text: "Google Scholar",
+              href: "https://scholar.google.com/citations?user=rYdUI6QAAAAJ",
+            },
+            {
+              text: "GitHub: ",
+              links: [
+                { text: "Tianshi-Dai", href: "https://github.com/Tianshi-Dai" },
+                {
+                  text: "theLittleStone",
+                  href: "https://github.com/theLittleStone",
+                },
+              ],
+            },
+            {
+              text: "ResearchGate",
+              href: "https://www.researchgate.net/profile/Tianshi-Dai-2",
+            },
+          ],
+          sections: [
+            {
+              id: "education",
+              title: "教育背景",
+              type: "entries",
+              items: [
+                {
+                  title:
+                    "硕士：2023.9 - 2026.6 河海大学 ｜ 电子与信息工程 ｜ 学位课均分：83.14 / 100",
+                  bullets: [
+                    "指导教师：胡居荣 教授",
+                    "研究领域：信号处理、机器学习、毫米波雷达",
+                    "核心理论课程：矩阵论 90 / 100、数值分析 93 / 100、概率论（自学）、信息论（自学）",
+                  ],
+                },
+                {
+                  title:
+                    "本科：2019.9 - 2023.6 南京理工大学紫金学院 ｜ 物联网工程 ｜ 学分绩点：3.63 / 4.0",
+                  bullets: [],
+                },
+                {
+                  title:
+                    "联培经历：2024.7 - 2025.8 中国科学院苏州生物医学工程技术研究所 ｜ 联合培养研究生（全职驻所科研）",
+                  bullets: [],
+                },
+                {
+                  title:
+                    "海外交流：2026 春 新加坡国立大学（NUS）｜ 短期交流课程",
+                  bullets: [
+                    "修读课程：《人工智能与机器学习（机器学习应用）》（Artificial Intelligence and Machine Learning (Machine Learning Applications)）",
+                  ],
+                },
+              ],
+            },
+            {
+              id: "interests",
+              title: "研究兴趣",
+              type: "paragraphs",
+              paragraphs: [
+                "目前我的主要研究兴趣在于从理论与实证相结合的角度理解神经网络的内部机制，尤其关注语言模型的表示学习与推理行为，以及信息论与机器学习的交叉领域——将信息论用作分析神经网络的理论工具。",
+                "目前，我正在独立开展一项关于词向量空间中概念几何结构的实证研究，初步探索语义概念是否可刻画为嵌入空间中的低维子空间，及其共享结构与私有结构的分离。此外我还在开源LLM和Agent社区中学习关于上下文工程、Agent工程以及大模型微调等的项目经验。",
+                "此前我的研究涉及基于信号处理和深度学习的毫米波雷达人体活动识别，我设计了基于点云数据表示学习的神经架构。通过研究不同的输入模态和网络结构如何影响表示学习和泛化能力，我开始对神经网络提取的信息、这些信息的编码方式以及为何某些表示能带来更好的泛化能力产生兴趣。",
+              ],
+              bullets: [
+                "<strong>目前想从事的方向</strong>：语言模型的推理机制与表示学习；神经网络的可解释性；以及信息论与机器学习的交叉领域，例如信息瓶颈理论（Information Bottleneck Theory，IB），希望将其作为分析神经网络表示的理论工具。",
+                "<strong>此前的研究方向</strong>：信号处理、机器学习、图神经网络",
+              ],
+            },
+            {
+              id: "experience",
+              title: "科研经历",
+              type: "entries",
+              items: [
+                {
+                  title:
+                    "2024 - 2026：开发了 DGRNET，一种用于基于毫米波雷达点云的人体活动分类的神经网络。",
+                  bullets: [
+                    "基于 DGCNN 改良了一种基于图神经网络的 backbone，以探究额外的信号模态如何影响点云表示学习和分类性能。",
+                    "在 DGRNET 中整合了时间建模模块，以研究序列信息聚合对分类效果的影响。",
+                    "同步研究了更多信息输入（雷达强度）对神经网络模型识别效果的影响，以及不同神经网络结构对信息提取能力的区别，并进一步使我的研究兴趣转向神经网络本身。",
+                  ],
+                },
+                {
+                  title:
+                    "2024 - 2026：与 DGRNET 配套，录制了用于人体活动识别的毫米波雷达数据。",
+                  bullets: [
+                    "使用 TI IWR6843AOP 雷达采集，数据集带有原生的强度信息维度。",
+                    "涵盖多个人类受试者、动作类别和观察方向，对神经网络的识别能力提出了更高的要求。",
+                  ],
+                },
+                {
+                  title: "2023：毕业设计：基于 ROS 系统的送药小车。",
+                  bullets: [
+                    "主要涉及 ROS 系统、图像和激光雷达识别、A* 等寻路算法以及 DWA 等局部路径规划算法。",
+                  ],
+                },
+                {
+                  title:
+                    "2021 - 2022：大学生创新创业项目：基于大数据分析的智慧水利平台系统设计。",
+                  bullets: [
+                    "本人主要负责基于 Java 自带库以及 MySQL 数据库，将各传感器节点发送的数据进行整合并进行统计。",
+                  ],
+                },
+              ],
+            },
+            {
+              id: "publications",
+              title: "发表论文",
+              type: "bullets",
+              bullets: [
+                '<strong>【已发表】</strong> Tianshi Dai, et al. "DGRNET: A Spatiotemporal Attention Neural Network for Millimeter-Wave Radar HAR With Integrated Intensity Information." <em>IEEE Sensors Journal</em>, 2026.',
+              ],
+            },
+            {
+              id: "skills",
+              title: "专业技能",
+              type: "groups",
+              groups: [
+                {
+                  title: "数学与理论基础",
+                  bullets: [
+                    "矩阵论、概率论、数值分析、离散数学、工程复变、函数信息论",
+                  ],
+                },
+                {
+                  title: "编程与工程开发",
+                  bullets: [
+                    "主力语言：Python、Java、C、Rust",
+                    "深度学习框架：PyTorch、NumPy、Llama.cpp",
+                  ],
+                },
+                {
+                  title: "其他专业基础知识",
+                  bullets: [
+                    "信号与系统、数字信号处理、通信原理、计算机组成原理、数/模电",
+                  ],
+                },
+                {
+                  title: "语言能力",
+                  bullets: [
+                    "大学英语四级（CET-4）：515",
+                    "大学英语六级（CET-6）：466",
+                    "考研初试英语：70",
+                  ],
+                },
+              ],
+            },
+            {
+              id: "projects",
+              title: "独立项目",
+              type: "paragraphs",
+              paragraphs: [
+                '使用基于 Llama.cpp 的 LLM 相关工具，以及特定的量化数据集 imatrix-calibration，构建了基于 Qwen3.6 27B 改版本地开源模型的权重矩阵 iMatrix，以及对应的量化版本。目前模型发布于 HuggingFace 社区（<a href="https://huggingface.co/theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF">theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF</a>），并获得了合计超过两万五千的下载量。',
+                '构建了一套以文档驱动（Document-Driven）与测试驱动开发（TDD）严格约束的 Agent 辅助编程流程，旨在通过明确的用户主导和流程限定，提升 AI 生成代码的稳定性与可维护性。仓库地址：<a href="https://github.com/theLittleStone/SpecForge">github.com/theLittleStone/SpecForge</a>',
+                "此外，曾参与 Opencode、Darktable 等知名开源项目的社区贡献（代码审查与功能补丁）。",
+              ],
+            },
+            {
+              id: "awards",
+              title: "获奖与荣誉",
+              type: "bullets",
+              bullets: [
+                "研究生阶段获第一、第三学年校奖学金",
+                "本科期间共获得校一等奖学金四次、校二等奖学金两次、校三等奖学金一次；2020 年获得校三好学生称号",
+                "2021 年：全国大学生电子设计竞赛 江苏省二等奖",
+                "2020 年：第十二届全国大学生数学竞赛（非数学类）二等奖",
+                "2021 - 2022 年：参加江苏省大学生创新创业训练计划项目并顺利结项",
+                "2021 年：校电子设计大赛二等奖；校级数学建模竞赛一等奖",
+                "2021 年：江苏省第十二届大学生知识竞赛（理工科组）三等奖",
+                "2020 年秋季：江苏省高等学校计算机二级（C 语言）优秀",
+              ],
+            },
+          ],
+          footer: "© 2026 戴天石",
+        },
+
+        en: {
+          htmlLang: "en",
+          docTitle: "Dai Tianshi · Academic CV",
+          name: "Dai Tianshi",
+          role: "Master of Engineering, Electronic and Information Engineering",
+          contacts: [
+            { text: "Nanjing, China", mute: true },
+            {
+              text: "Email: tianshi.dai@qq.com",
+              href: "mailto:tianshi.dai@qq.com",
+            },
+            { text: "ORCID", href: "https://orcid.org/0009-0002-2830-7963" },
+            {
+              text: "Google Scholar",
+              href: "https://scholar.google.com/citations?user=rYdUI6QAAAAJ",
+            },
+            {
+              text: "GitHub: ",
+              links: [
+                { text: "Tianshi-Dai", href: "https://github.com/Tianshi-Dai" },
+                {
+                  text: "theLittleStone",
+                  href: "https://github.com/theLittleStone",
+                },
+              ],
+            },
+            {
+              text: "ResearchGate",
+              href: "https://www.researchgate.net/profile/Tianshi-Dai-2",
+            },
+          ],
+          sections: [
+            {
+              id: "education",
+              title: "Education",
+              type: "entries",
+              items: [
+                {
+                  title:
+                    "M.Eng.: Sep 2023 - Jun 2026, Hohai University | Electronic and Information Engineering | Average score of degree courses: 83.14 / 100",
+                  bullets: [
+                    "Advisor: Prof. Jurong Hu",
+                    "Research field: signal processing, machine learning, millimeter-wave radar",
+                    "Core theoretical courses: Matrix Theory 90/100, Numerical Analysis 93/100, Probability Theory (self-study), Information Theory (self-study)",
+                  ],
+                },
+                {
+                  title:
+                    "B.Eng.: Sep 2019 - Jun 2023, Nanjing University of Science and Technology Zijin College | Internet of Things Engineering | GPA: 3.63 / 4.0",
+                  bullets: [],
+                },
+                {
+                  title:
+                    "Joint Training: Jul 2024 - Aug 2025, Suzhou Institute of Biomedical Engineering and Technology, Chinese Academy of Sciences | Jointly-trained graduate student (full-time on-site research)",
+                  bullets: [],
+                },
+                {
+                  title:
+                    "Overseas Exchange: Spring 2026, National University of Singapore (NUS) | Short-term exchange program",
+                  bullets: [
+                    "Course taken: Artificial Intelligence and Machine Learning (Machine Learning Applications)",
+                  ],
+                },
+              ],
+            },
+            {
+              id: "interests",
+              title: "Research Interests",
+              type: "paragraphs",
+              paragraphs: [
+                "My primary research interest lies in understanding the internal mechanisms of neural networks by combining theoretical and empirical perspectives, with a particular focus on representation learning and reasoning behavior in language models, and on the intersection of information theory with machine learning — using information theory as a theoretical tool for analyzing neural networks.",
+                "Currently, I am independently conducting an empirical study on the geometric structure of concepts in word-vector space, preliminarily exploring whether semantic concepts can be characterized as low-dimensional subspaces of the embedding space, and how their shared and concept-specific structures can be separated. In addition, I am building hands-on project experience in context engineering, agent engineering, and LLM fine-tuning through the open-source LLM and agent communities.",
+                "Previously, my research involved millimeter-wave radar human activity recognition based on signal processing and deep learning, where I designed neural architectures for representation learning on point-cloud data. By investigating how different input modalities and network architectures affect representation learning and generalization, I became interested in the information extracted by neural networks, how this information is encoded, and why certain representations lead to better generalization.",
+              ],
+              bullets: [
+                "<strong>Current directions</strong>: reasoning mechanisms and representation learning in language models; explainability of neural networks; and the intersection of information theory with machine learning, such as Information Bottleneck (IB) theory, which I hope to apply as a theoretical tool for analyzing neural-network representations.",
+                "<strong>Previous directions</strong>: signal processing, machine learning, graph neural networks.",
+              ],
+            },
+            {
+              id: "experience",
+              title: "Research Experience",
+              type: "entries",
+              items: [
+                {
+                  title:
+                    "2024 - 2026: Developed DGRNET, a neural network for human activity classification based on millimeter-wave radar point clouds.",
+                  bullets: [
+                    "Improved a graph-neural-network backbone based on DGCNN to investigate how additional signal modalities affect point-cloud representation learning and classification performance.",
+                    "Integrated temporal modeling modules into DGRNET to study the impact of sequential information aggregation on classification performance.",
+                    "Simultaneously studied how additional information input (radar intensity) affects recognition performance and how different network architectures differ in information extraction capability, which further shifted my research interest toward neural networks themselves.",
+                  ],
+                },
+                {
+                  title:
+                    "2024 - 2026: Recorded millimeter-wave radar data for human activity recognition, complementary to DGRNET.",
+                  bullets: [
+                    "Data collected with the TI IWR6843AOP radar, featuring a native intensity information dimension.",
+                    "Covers multiple human subjects, activity classes, and viewing directions, posing greater challenges for neural-network recognition.",
+                  ],
+                },
+                {
+                  title:
+                    "2023: Undergraduate thesis: an ROS-based medication delivery vehicle.",
+                  bullets: [
+                    "Involving ROS, image and LiDAR recognition, pathfinding algorithms such as A*, and local path planning algorithms such as DWA.",
+                  ],
+                },
+                {
+                  title:
+                    "2021 - 2022: College Students' Innovation and Entrepreneurship Project: design of a smart water conservancy platform system based on big-data analytics.",
+                  bullets: [
+                    "I was mainly responsible for integrating and statistically analyzing the data sent by various sensor nodes, using Java standard libraries and a MySQL database.",
+                  ],
+                },
+              ],
+            },
+            {
+              id: "publications",
+              title: "Publications",
+              type: "bullets",
+              bullets: [
+                '<strong>[Published]</strong> Tianshi Dai, et al. "DGRNET: A Spatiotemporal Attention Neural Network for Millimeter-Wave Radar HAR With Integrated Intensity Information." <em>IEEE Sensors Journal</em>, 2026.',
+              ],
+            },
+            {
+              id: "skills",
+              title: "Technical Skills",
+              type: "groups",
+              groups: [
+                {
+                  title: "Mathematics & theoretical foundations",
+                  bullets: [
+                    "Matrix theory, probability theory, numerical analysis, discrete mathematics, complex analysis for engineering, functional information theory",
+                  ],
+                },
+                {
+                  title: "Programming & engineering development",
+                  bullets: [
+                    "Primary languages: Python, Java, C, Rust",
+                    "Deep learning frameworks: PyTorch, NumPy, Llama.cpp",
+                  ],
+                },
+                {
+                  title: "Other professional fundamentals",
+                  bullets: [
+                    "Signals and Systems, Digital Signal Processing, Principles of Communications, Computer Organization, Analog/Digital Electronics",
+                  ],
+                },
+                {
+                  title: "Language proficiency",
+                  bullets: [
+                    "CET-4: 515",
+                    "CET-6: 466",
+                    "Postgraduate entrance exam English: 70",
+                  ],
+                },
+              ],
+            },
+            {
+              id: "projects",
+              title: "Independent Projects",
+              type: "paragraphs",
+              paragraphs: [
+                'Built the weight matrix iMatrix for a locally open-sourced fine-tuned Qwen3.6 27B model, along with its quantized versions, using LLM tools based on Llama.cpp and the imatrix-calibration quantization dataset. The model is published on the HuggingFace community (<a href="https://huggingface.co/theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF">theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF</a>) and has received more than 25,000 total downloads.',
+                'Developed a Document-Driven and Test-Driven Development (TDD) strictly-constrained Agent-assisted programming workflow, aiming to improve the stability and maintainability of AI-generated code through explicit user-led control and process constraints. Repository: <a href="https://github.com/theLittleStone/SpecForge">github.com/theLittleStone/SpecForge</a>',
+                "Additionally, I have contributed to well-known open-source projects such as Opencode and Darktable (code review and feature patches).",
+              ],
+            },
+            {
+              id: "awards",
+              title: "Awards / Others",
+              type: "bullets",
+              bullets: [
+                "Graduate scholarships for the 1st and 3rd academic years",
+                'During undergraduate studies: First-class university scholarship four times, Second-class twice, Third-class once; awarded the university "Merit Student" title in 2020',
+                "2021: Second Prize, National Undergraduate Electronic Design Contest (Jiangsu Province)",
+                "2020: Second Prize, 12th National College Mathematics Competition (Non-Mathematics Category)",
+                "2021 - 2022: Participated in and successfully completed the Jiangsu Provincial College Students' Innovation and Entrepreneurship Training Program",
+                "2021: Second Prize in the university Electronic Design Contest; First Prize in the university Mathematical Modeling Contest",
+                "2021: Third Prize, 12th Jiangsu Provincial College Students' Knowledge Contest (Science and Engineering Group)",
+                '2020 Autumn: "Excellent" in the Jiangsu Provincial Computer Level-2 Examination (C language)',
+              ],
+            },
+          ],
+          footer: "© 2026 Dai Tianshi",
+        },
+      };
+
+      function renderContacts(contacts) {
+        return contacts
+          .map((c) => {
+            if (c.links) {
+              const anchors = c.links
+                .map(
+                  (l) =>
+                    '<a href="' +
+                    l.href +
+                    '" target="_blank" rel="noopener">' +
+                    l.text +
+                    "</a>",
+                )
+                .join(" · ");
+              return '<span class="full">' + c.text + anchors + "</span>";
+            }
+            if (c.href) {
+              return (
+                '<span><a href="' +
+                c.href +
+                '" target="_blank" rel="noopener">' +
+                c.text +
+                "</a></span>"
+              );
+            }
+            return '<span class="muted">' + c.text + "</span>";
+          })
+          .join("");
       }
-    ],
-    footer: "© 2026 戴天石"
-  },
 
-  en: {
-    htmlLang: "en",
-    docTitle: "Dai Tianshi · Academic CV",
-    name: "Dai Tianshi",
-    role: "Master of Engineering, Electronic and Information Engineering",
-    contacts: [
-      { text: "Nanjing, China", mute: true },
-      { text: "Email: tianshi.dai@qq.com", href: "mailto:tianshi.dai@qq.com" },
-      { text: "ORCID", href: "https://orcid.org/0009-0002-2830-7963" },
-      { text: "Google Scholar", href: "https://scholar.google.com/citations?user=rYdUI6QAAAAJ" },
-      { text: "GitHub: ", links: [
-        { text: "Tianshi-Dai", href: "https://github.com/Tianshi-Dai" },
-        { text: "theLittleStone", href: "https://github.com/theLittleStone" }
-      ] },
-      { text: "ResearchGate", href: "https://www.researchgate.net/profile/Tianshi-Dai-2" }
-    ],
-    sections: [
-      {
-        id: "education", title: "Education",
-        type: "entries",
-        items: [
-          {
-            title: "M.Eng.: Sep 2023 - Jun 2026, Hohai University | Electronic and Information Engineering | Average score of degree courses: 83.14 / 100",
-            bullets: [
-              "Advisor: Prof. Jurong Hu",
-              "Research field: signal processing, machine learning, millimeter-wave radar",
-              "Core theoretical courses: Matrix Theory 90/100, Numerical Analysis 93/100, Probability Theory (self-study), Information Theory (self-study)"
-            ]
-          },
-          {
-            title: "B.Eng.: Sep 2019 - Jun 2023, Nanjing University of Science and Technology Zijin College | Internet of Things Engineering | GPA: 3.63 / 4.0",
-            bullets: []
-          },
-          {
-            title: "Joint Training: Jul 2024 - Aug 2025, Suzhou Institute of Biomedical Engineering and Technology, Chinese Academy of Sciences | Jointly-trained graduate student (full-time on-site research)",
-            bullets: []
-          },
-          {
-            title: "Overseas Exchange: Spring 2026, National University of Singapore (NUS) | Short-term exchange program",
-            bullets: [
-              "Course taken: Artificial Intelligence and Machine Learning (Machine Learning Applications)"
-            ]
+      function renderSection(s) {
+        let body = "";
+        if (s.type === "entries") {
+          body = s.items
+            .map((item) => {
+              let html =
+                '<div class="entry"><div class="entry-title">' +
+                item.title +
+                "</div>";
+              if (item.bullets && item.bullets.length) {
+                html +=
+                  "<ul>" +
+                  item.bullets.map((b) => "<li>" + b + "</li>").join("") +
+                  "</ul>";
+              }
+              return html + "</div>";
+            })
+            .join("");
+        } else if (s.type === "paragraphs") {
+          body = s.paragraphs.map((p) => "<p>" + p + "</p>").join("");
+          if (s.bullets && s.bullets.length) {
+            body +=
+              "<ul>" +
+              s.bullets.map((b) => "<li>" + b + "</li>").join("") +
+              "</ul>";
           }
-        ]
-      },
-      {
-        id: "interests", title: "Research Interests",
-        type: "paragraphs",
-        paragraphs: [
-          "My primary research interest is to deeply understand the internal mechanisms of neural networks from a theoretical perspective, with a particular focus on explainable machine learning, information-theoretic analysis of deep models, and causal inference in neural networks.",
-          "Previously, my research involved millimeter-wave radar human activity recognition based on signal processing and deep learning, where I designed neural architectures for representation learning on point-cloud data. By investigating how different input modalities and network architectures affect representation learning and generalization, I became interested in the information extracted by neural networks, how this information is encoded, and why certain representations lead to better generalization."
-        ],
-        bullets: [
-          "<strong>Current directions</strong>: explainable machine learning, causal inference in neural networks, and the intersection of information theory with machine learning — especially neural networks — such as the Information Bottleneck (IB) theory.",
-          "<strong>Previous directions</strong>: signal processing, machine learning, graph neural networks."
-        ]
-      },
-      {
-        id: "experience", title: "Research Experience",
-        type: "entries",
-        items: [
-          {
-            title: "2024 - 2026: Developed DGRNET, a neural network for human activity classification based on millimeter-wave radar point clouds.",
-            bullets: [
-              "Improved a graph-neural-network backbone based on DGCNN to investigate how additional signal modalities affect point-cloud representation learning and classification performance.",
-              "Integrated temporal modeling modules into DGRNET to study the impact of sequential information aggregation on classification performance.",
-              "Simultaneously studied how additional information input (radar intensity) affects recognition performance and how different network architectures differ in information extraction capability, which further shifted my research interest toward neural networks themselves."
-            ]
-          },
-          {
-            title: "2024 - 2026: Recorded millimeter-wave radar data for human activity recognition, complementary to DGRNET.",
-            bullets: [
-              "Data collected with the TI IWR6843AOP radar, featuring a native intensity information dimension.",
-              "Covers multiple human subjects, activity classes, and viewing directions, posing greater challenges for neural-network recognition."
-            ]
-          },
-          {
-            title: "2023: Undergraduate thesis: an ROS-based medication delivery vehicle.",
-            bullets: [
-              "Involving ROS, image and LiDAR recognition, pathfinding algorithms such as A*, and local path planning algorithms such as DWA."
-            ]
-          },
-          {
-            title: "2021 - 2022: College Students' Innovation and Entrepreneurship Project: design of a smart water conservancy platform system based on big-data analytics.",
-            bullets: [
-              "I was mainly responsible for integrating and statistically analyzing the data sent by various sensor nodes, using Java standard libraries and a MySQL database."
-            ]
-          }
-        ]
-      },
-      {
-        id: "publications", title: "Publications",
-        type: "bullets",
-        bullets: [
-          '<strong>[Published]</strong> Tianshi Dai, et al. "DGRNET: A Spatiotemporal Attention Neural Network for Millimeter-Wave Radar HAR With Integrated Intensity Information." <em>IEEE Sensors Journal</em>, 2026.'
-        ]
-      },
-      {
-        id: "skills", title: "Technical Skills",
-        type: "groups",
-        groups: [
-          {
-            title: "Mathematics & theoretical foundations",
-            bullets: ["Matrix theory, probability theory, numerical analysis, discrete mathematics, complex analysis for engineering, functional information theory"]
-          },
-          {
-            title: "Programming & engineering development",
-            bullets: ["Primary languages: Python, Java, C, Rust", "Deep learning frameworks: PyTorch, NumPy, Llama.cpp"]
-          },
-          {
-            title: "Other professional fundamentals",
-            bullets: ["Signals and Systems, Digital Signal Processing, Principles of Communications, Computer Organization, Analog/Digital Electronics"]
-          },
-          {
-            title: "Language proficiency",
-            bullets: ["CET-4: 515", "CET-6: 466", "Postgraduate entrance exam English: 70"]
-          }
-        ]
-      },
-      {
-        id: "projects", title: "Independent Projects",
-        type: "paragraphs",
-        paragraphs: [
-          'Built the weight matrix iMatrix for a locally open-sourced fine-tuned Qwen3.6 27B model, along with its quantized versions, using LLM tools based on Llama.cpp and the imatrix-calibration quantization dataset. The model is published on the HuggingFace community (<a href="https://huggingface.co/theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF">theLittleStone/Qwen3.6-27B-AEON-Ultimate-Uncensored-MTP-i1-GGUF</a>) and has received more than 25,000 total downloads.',
-          'Developed a Document-Driven and Test-Driven Development (TDD) strictly-constrained Agent-assisted programming workflow, aiming to improve the stability and maintainability of AI-generated code through explicit user-led control and process constraints. Repository: <a href="https://github.com/theLittleStone/SpecForge">github.com/theLittleStone/SpecForge</a>',
-          'Additionally, I have contributed to well-known open-source projects such as Opencode and Darktable (code review and feature patches).'
-        ]
-      },
-      {
-        id: "awards", title: "Awards / Others",
-        type: "bullets",
-        bullets: [
-          "Graduate scholarships for the 1st and 3rd academic years",
-          "During undergraduate studies: First-class university scholarship four times, Second-class twice, Third-class once; awarded the university \"Merit Student\" title in 2020",
-          "2021: Second Prize, National Undergraduate Electronic Design Contest (Jiangsu Province)",
-          "2020: Second Prize, 12th National College Mathematics Competition (Non-Mathematics Category)",
-          "2021 - 2022: Participated in and successfully completed the Jiangsu Provincial College Students' Innovation and Entrepreneurship Training Program",
-          "2021: Second Prize in the university Electronic Design Contest; First Prize in the university Mathematical Modeling Contest",
-          "2021: Third Prize, 12th Jiangsu Provincial College Students' Knowledge Contest (Science and Engineering Group)",
-          "2020 Autumn: \"Excellent\" in the Jiangsu Provincial Computer Level-2 Examination (C language)"
-        ]
+        } else if (s.type === "bullets") {
+          body =
+            "<ul>" +
+            s.bullets.map((b) => "<li>" + b + "</li>").join("") +
+            "</ul>";
+        } else if (s.type === "groups") {
+          body = s.groups
+            .map(
+              (g) =>
+                '<div class="skills-group"><div class="skills-group-title">' +
+                g.title +
+                "</div>" +
+                "<ul>" +
+                g.bullets.map((b) => "<li>" + b + "</li>").join("") +
+                "</ul></div>",
+            )
+            .join("");
+        }
+        return (
+          '<section id="' +
+          s.id +
+          '"><h2><span class="bar"></span>' +
+          s.title +
+          "</h2>" +
+          body +
+          "</section>"
+        );
       }
-    ],
-    footer: "© 2026 Dai Tianshi"
-  }
-};
 
-function renderContacts(contacts) {
-  return contacts.map(c => {
-    if (c.links) {
-      const anchors = c.links.map(l =>
-        '<a href="' + l.href + '" target="_blank" rel="noopener">' + l.text + '</a>'
-      ).join(" · ");
-      return '<span class="full">' + c.text + anchors + '</span>';
-    }
-    if (c.href) {
-      return '<span><a href="' + c.href + '" target="_blank" rel="noopener">' + c.text + '</a></span>';
-    }
-    return '<span class="muted">' + c.text + '</span>';
-  }).join("");
-}
-
-function renderSection(s) {
-  let body = "";
-  if (s.type === "entries") {
-    body = s.items.map(item => {
-      let html = '<div class="entry"><div class="entry-title">' + item.title + "</div>";
-      if (item.bullets && item.bullets.length) {
-        html += "<ul>" + item.bullets.map(b => "<li>" + b + "</li>").join("") + "</ul>";
+      // 经 DOMParser 解析后挂载，避免直接对 innerHTML 赋值：
+      // 数据源为文件内静态 I18N 内容（无外部输入），解析产物位于 inert 文档中，脚本不会执行。
+      function mountHTML(container, html) {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        container.replaceChildren(...doc.body.childNodes);
       }
-      return html + "</div>";
-    }).join("");
-  } else if (s.type === "paragraphs") {
-    body = s.paragraphs.map(p => "<p>" + p + "</p>").join("");
-    if (s.bullets && s.bullets.length) {
-      body += "<ul>" + s.bullets.map(b => "<li>" + b + "</li>").join("") + "</ul>";
-    }
-  } else if (s.type === "bullets") {
-    body = "<ul>" + s.bullets.map(b => "<li>" + b + "</li>").join("") + "</ul>";
-  } else if (s.type === "groups") {
-    body = s.groups.map(g =>
-      '<div class="skills-group"><div class="skills-group-title">' + g.title + "</div>" +
-      "<ul>" + g.bullets.map(b => "<li>" + b + "</li>").join("") + "</ul></div>"
-    ).join("");
-  }
-  return '<section id="' + s.id + '"><h2><span class="bar"></span>' + s.title + "</h2>" + body + "</section>";
-}
 
-function render(lang) {
-  const d = I18N[lang];
-  document.documentElement.lang = d.htmlLang;
-  document.title = d.docTitle;
-  document.getElementById("name").textContent = d.name;
-  document.getElementById("role").textContent = d.role;
-  document.getElementById("contact").innerHTML = renderContacts(d.contacts);
-  document.getElementById("main").innerHTML = d.sections.map(renderSection).join("");
-  document.getElementById("footer").textContent = d.footer;
-  document.getElementById("btn-zh").classList.toggle("active", lang === "zh");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-}
+      function render(lang) {
+        const d = I18N[lang];
+        document.documentElement.lang = d.htmlLang;
+        document.title = d.docTitle;
+        document.getElementById("name").textContent = d.name;
+        document.getElementById("role").textContent = d.role;
+        mountHTML(
+          document.getElementById("contact"),
+          renderContacts(d.contacts),
+        );
+        mountHTML(
+          document.getElementById("main"),
+          d.sections.map(renderSection).join(""),
+        );
+        document.getElementById("footer").textContent = d.footer;
+        document
+          .getElementById("btn-zh")
+          .classList.toggle("active", lang === "zh");
+        document
+          .getElementById("btn-en")
+          .classList.toggle("active", lang === "en");
+      }
 
-function currentLang() {
-  const fromHash = location.hash.replace("#", "");
-  if (fromHash === "zh" || fromHash === "en") return fromHash;
-  const stored = localStorage.getItem("cv-lang");
-  if (stored === "zh" || stored === "en") return stored;
-  return "zh";
-}
+      function currentLang() {
+        const fromHash = location.hash.replace("#", "");
+        if (fromHash === "zh" || fromHash === "en") return fromHash;
+        const stored = localStorage.getItem("cv-lang");
+        if (stored === "zh" || stored === "en") return stored;
+        return "zh";
+      }
 
-let lang = currentLang();
-render(lang);
+      let lang = currentLang();
+      render(lang);
 
-document.getElementById("btn-zh").addEventListener("click", () => setLang("zh"));
-document.getElementById("btn-en").addEventListener("click", () => setLang("en"));
+      document
+        .getElementById("btn-zh")
+        .addEventListener("click", () => setLang("zh"));
+      document
+        .getElementById("btn-en")
+        .addEventListener("click", () => setLang("en"));
 
-function setLang(next) {
-  lang = next;
-  localStorage.setItem("cv-lang", next);
-  history.replaceState(null, "", "#" + next);
-  render(next);
-}
+      function setLang(next) {
+        lang = next;
+        localStorage.setItem("cv-lang", next);
+        history.replaceState(null, "", "#" + next);
+        render(next);
+      }
 
-window.addEventListener("hashchange", () => {
-  const next = currentLang();
-  if (next !== lang) {
-    lang = next;
-    render(next);
-  }
-});
-</script>
-</body>
+      window.addEventListener("hashchange", () => {
+        const next = currentLang();
+        if (next !== lang) {
+          lang = next;
+          render(next);
+        }
+      });
+    </script>
+  </body>
 </html>
